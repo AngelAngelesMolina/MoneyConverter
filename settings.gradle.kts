@@ -24,3 +24,4 @@ rootProject.name = "MoneyConvertor"
 include(":app")
 include(":core")
 include(":core:network")
+include(":core:ui")
