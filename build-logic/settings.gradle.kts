@@ -3,7 +3,7 @@ dependencyResolutionManagement {
         google()
         mavenCentral()
     }
-    versionCatalogs{
+    versionCatalogs {
         create("libs"){
             from(files("../gradle/libs.versions.toml"))
         }

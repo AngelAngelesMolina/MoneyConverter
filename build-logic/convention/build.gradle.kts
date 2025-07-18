@@ -1,25 +1,24 @@
 import org.jetbrains.kotlin.gradle.tasks.KotlinCompile
 
-plugins{
+plugins {
     `kotlin-dsl`
 }
 
 group = "com.mc.buildlogic"
 
-java{
+java {
     sourceCompatibility = JavaVersion.VERSION_17
     targetCompatibility = JavaVersion.VERSION_17
 }
 
 tasks.withType<KotlinCompile>().configureEach {
-    kotlinOptions{
+    kotlinOptions {
         jvmTarget = JavaVersion.VERSION_17.toString()
     }
 }
-
 //validation for our plugins
-tasks{
-    validatePlugins{
+tasks {
+    validatePlugins {
         enableStricterValidation = true
         failOnWarning = true
     }
@@ -28,4 +27,13 @@ tasks{
 dependencies{
     compileOnly(libs.android.gradlePlugin)
     compileOnly(libs.kotlin.gradlePlugin)
+}
+
+gradlePlugin {
+    plugins {
+        register("androidLibrary") {
+            id = "moneyConvertor.android.library"
+            implementationClass = "AndroidLibraryConventionPlugin"
+        }
+    }
 }

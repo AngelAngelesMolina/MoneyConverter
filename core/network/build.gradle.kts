@@ -1,20 +1,9 @@
 plugins{
-    id ("com.android.library")
-    id ("org.jetbrains.kotlin.android")
-
+    alias(libs.plugins.moneyconvertor.android.library)
+//    id ("moneyConvertor.android.library")
 }
 
 android{
     namespace = "com.mc.network"
-    compileSdk = 35
 
-    defaultConfig {
-        minSdk = 24
-        targetSdk = 35
-
-        testInstrumentationRunner = "androidx.test.runner.AndroidJUnitRunner"
-        vectorDrawables {
-            useSupportLibrary = true
-        }
-    }
 }
